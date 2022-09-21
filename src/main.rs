@@ -1,12 +1,18 @@
 
 
+fn largest ( list: &[i32]) -> i32 {
+   let mut largest = list[0];
 
-fn main(){
-    let my_vec = vec![1,2,3,4];
-   for index in 0..10 {
-    match my_vec.get(index){
-       Some(number)=> println!("The number is : {}",number),
-       None =>{}
+   for &item in list {
+      if item > largest {
+         largest = item;
       }
-  }
+   }
+   largest
+}
+fn main(){
+   let number_list = vec![12,231,1251,634,143,33];
+
+   let result = largest(&number_list);
+   println!("The largest number is {}", result);
 }
